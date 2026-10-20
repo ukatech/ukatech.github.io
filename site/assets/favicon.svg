@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .outline { fill: #ffffff; stroke: #1c1d21; }
+    .yaya { fill: #9b3f3a; }
+    .satori { fill: #2f6b3f; }
+    .kawari { fill: #1c1d21; }
+    @media (prefers-color-scheme: dark) {
+      .outline { fill: #1d1f23; stroke: #e8e8e4; }
+      .yaya { fill: #d0736b; }
+      .satori { fill: #6fb07f; }
+      .kawari { fill: #e8e8e4; }
+    }
+  </style>
+  <path class="outline" stroke-width="2.5" stroke-linejoin="round"
+    d="M6 4h20a4 4 0 0 1 4 4v11a4 4 0 0 1-4 4H14l-6 5v-5H6a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4z"/>
+  <circle class="yaya" cx="10" cy="13.5" r="2.25"/>
+  <circle class="satori" cx="16" cy="13.5" r="2.25"/>
+  <circle class="kawari" cx="22" cy="13.5" r="2.25"/>
+</svg>

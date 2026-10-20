@@ -1,0 +1,375 @@
+/*
+ * Ukagaka Tech Team components
+ * 値はすべて tokens.css の変数を使う。新しい色や寸法が必要になったら先に tokens.css に足す。
+ */
+
+/* ---- Base ---- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  line-height: var(--leading-tight);
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.container {
+  width: 100%;
+  max-width: calc(var(--content-width) + var(--gutter) * 2);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ---- Site header ---- */
+
+.site-header {
+  border-bottom: var(--border);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 3.5rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand__mark {
+  width: 28px;
+  height: 28px;
+  flex: none;
+}
+
+/* ---- Hero ---- */
+
+.hero {
+  padding-block: var(--space-8) var(--space-7);
+}
+
+.hero__kicker {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-ink-muted);
+  letter-spacing: 0.04em;
+}
+
+.hero__title {
+  margin-top: var(--space-2);
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.hero__lead {
+  margin-top: var(--space-4);
+  max-width: 36em;
+  color: var(--color-ink-muted);
+}
+
+/* ---- Section ---- */
+
+.section {
+  padding-block: var(--space-6) var(--space-7);
+}
+
+.section__title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-5);
+  border-bottom: var(--border);
+}
+
+/* ---- Project card ---- */
+
+.project--yaya {
+  --accent-main: var(--color-yaya-main);
+  --accent-sub: var(--color-yaya-sub);
+  --accent-on: var(--color-yaya-on);
+}
+
+.project--satori {
+  --accent-main: var(--color-satori-main);
+  --accent-sub: var(--color-satori-sub);
+  --accent-on: var(--color-satori-on);
+}
+
+.project--kawari {
+  --accent-main: var(--color-kawari-main);
+  --accent-sub: var(--color-kawari-sub);
+  --accent-on: var(--color-kawari-on);
+}
+
+.project-grid {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: 1fr;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 52rem) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 40rem) {
+  .project-grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+/* 主色の太帯 + 副色の細線 */
+.project-card__stripe {
+  height: calc(var(--stripe-main) + var(--stripe-sub));
+  background: linear-gradient(
+    to bottom,
+    var(--accent-main) 0 var(--stripe-main),
+    var(--accent-sub) var(--stripe-main) 100%
+  );
+}
+
+.project-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+  padding: var(--space-5);
+}
+
+.project-card__name {
+  font-size: var(--text-xl);
+  font-weight: 800;
+}
+
+/* 色帯なしの小さめカード(SHIORI 以外のプロジェクト用) */
+.project-card--compact .project-card__body {
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-5);
+}
+
+.project-card--compact .project-card__name {
+  font-size: var(--text-lg);
+}
+
+.project-card__tagline {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--accent-main);
+  font-weight: 600;
+}
+
+.project-card__desc {
+  color: var(--color-ink-muted);
+  font-size: var(--text-sm);
+}
+
+.project-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: auto;
+  padding-top: var(--space-3);
+}
+
+/* ---- Button ---- */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 2.25rem;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--color-ink);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color var(--duration), background-color var(--duration);
+}
+
+.button:hover {
+  border-color: var(--accent-main, var(--color-ink));
+}
+
+/* 外部サイトなど、リンク先の性格を添える小さな注記 */
+.button__note {
+  color: var(--color-ink-muted);
+  font-size: var(--text-xs);
+  font-weight: 400;
+}
+
+.button--primary {
+  background: var(--accent-main, var(--color-ink));
+  border-color: var(--accent-main, var(--color-ink));
+  color: var(--accent-on, var(--color-bg));
+}
+
+.button--primary:hover {
+  opacity: 0.88;
+}
+
+/* ---- Org list ---- */
+
+.org-grid {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: 1fr;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 40rem) {
+  .org-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.org-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  height: 100%;
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface);
+  border: var(--border);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: border-color var(--duration);
+}
+
+.org-card:hover {
+  border-color: var(--color-ink-muted);
+}
+
+.org-card__title {
+  font-weight: 700;
+}
+
+.org-card__title + .org-card__name {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-ink-muted);
+}
+
+.org-card__name {
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.org-card__name::after {
+  content: " \2192";
+  color: var(--color-ink-muted);
+}
+
+.org-card__desc {
+  color: var(--color-ink-muted);
+  font-size: var(--text-sm);
+}
+
+/* ---- Member list ----
+ * 中身はデプロイ時に scripts/build_members.py が生成する。
+ */
+
+.member-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.member {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3) var(--space-1) var(--space-1);
+  border: var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  text-decoration: none;
+  transition: border-color var(--duration);
+}
+
+.member:hover {
+  border-color: var(--color-ink-muted);
+}
+
+.member__avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-line);
+}
+
+.member-list__more {
+  margin-top: var(--space-3);
+  color: var(--color-ink-muted);
+  font-size: var(--text-sm);
+}
+
+/* ---- Footer ---- */
+
+.site-footer {
+  border-top: var(--border);
+  padding-block: var(--space-5);
+  color: var(--color-ink-muted);
+  font-size: var(--text-xs);
+}

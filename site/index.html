@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ukagaka Tech Team</title>
+  <meta name="description" content="伺かのベースウェア周辺で使われるプログラムを開発・保守している Ukagaka Tech Team (ukatech) のサイトです。">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/tokens.css">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./">
+        <img class="brand__mark" src="assets/favicon.svg" alt="">
+        <span>Ukagaka Tech Team</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <p class="hero__kicker">ukatech</p>
+      <h1 class="hero__title">Ukagaka Tech Team</h1>
+      <p class="hero__lead">伺かのベースウェア周辺で使われる SHIORI やツール類を開発・保守しているチームです。</p>
+    </section>
+
+    <section class="section container" aria-labelledby="projects-title">
+      <h2 class="section__title" id="projects-title">SHIORI</h2>
+      <ul class="project-grid">
+        <li class="project-card project--yaya">
+          <div class="project-card__stripe"></div>
+          <div class="project-card__body">
+            <h3 class="project-card__name">YAYA</h3>
+            <p class="project-card__tagline">Yet Another AYA</p>
+            <p class="project-card__desc">C言語に近い構文で書ける、汎用性の高い SHIORI です。豊富な組み込み関数を備え、SAORI としても動作します。テンプレートゴースト「紺野ややめ」から始められます。</p>
+            <div class="project-card__links">
+              <a class="button button--primary" href="https://yaya-shiori.github.io/yaya-docs/">ドキュメント</a>
+              <a class="button" href="https://github.com/YAYA-shiori/yaya-shiori/releases/latest">最新リリース</a>
+              <a class="button" href="https://github.com/YAYA-shiori/konnoyayame">テンプレート: 紺野ややめ</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="project-card project--satori">
+          <div class="project-card__stripe"></div>
+          <div class="project-card__body">
+            <h3 class="project-card__name">里々</h3>
+            <p class="project-card__tagline">Yet Another SATORI</p>
+            <p class="project-card__desc">台本を書くような感覚でトークを記述できる SHIORI です。シンプルな記法で、プログラミングに不慣れでもゴーストを作り始めやすくなっています。</p>
+            <div class="project-card__links">
+              <a class="button button--primary" href="/satori-docs/">ドキュメント</a>
+              <a class="button" href="https://github.com/ukatech/satoriya-shiori/releases/latest">最新リリース</a>
+              <a class="button" href="https://github.com/ukatech/POST_and_KOMAINU_V2">テンプレート: ポストと狛犬</a>
+              <a class="button" href="https://soliton.sub.jp/satori/">里々wiki<span class="button__note">(プロジェクト外: ユーザー視点の解説)</span></a>
+            </div>
+          </div>
+        </li>
+
+        <li class="project-card project--kawari">
+          <div class="project-card__stripe"></div>
+          <div class="project-card__body">
+            <h3 class="project-card__name">華和梨</h3>
+            <p class="project-card__tagline">プログラマブル準AI</p>
+            <p class="project-card__desc">単語の組み合わせとインラインスクリプト (KIS) で会話を組み立てる SHIORI です。SHIORI/2.x と SHIORI/3.0 に対応しています。</p>
+            <div class="project-card__links">
+              <a class="button button--primary" href="/kawari/">ドキュメント</a>
+              <a class="button" href="https://github.com/ukatech/kawari/releases/latest">最新リリース</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section container" aria-labelledby="libraries-title">
+      <h2 class="section__title" id="libraries-title">ライブラリ・ツール</h2>
+      <ul class="project-grid project-grid--2">
+        <li class="project-card project-card--compact">
+          <div class="project-card__body">
+            <h3 class="project-card__name">CSAORI</h3>
+            <p class="project-card__desc">SAORI・プラグインを C++ で作るための基本ライブラリです。</p>
+            <div class="project-card__links">
+              <a class="button" href="https://github.com/ukatech/csaori">GitHub リポジトリ</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="project-card project-card--compact">
+          <div class="project-card__body">
+            <h3 class="project-card__name">ssp-i18n</h3>
+            <p class="project-card__desc">SSP の多言語リソースです。英語・中国語 (簡体/繁体)・韓国語の言語パックを管理しています。</p>
+            <div class="project-card__links">
+              <a class="button" href="https://github.com/ukatech/ssp-i18n">GitHub リポジトリ</a>
+              <a class="button" href="https://github.com/ukatech/ssp-i18n/releases/latest">最新リリース</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="project-card project-card--compact">
+          <div class="project-card__body">
+            <h3 class="project-card__name">jsstp-lib</h3>
+            <p class="project-card__desc">Web ページや Node.js から SSTP でゴーストと通信するための JavaScript ライブラリです。npm でも配布しています。</p>
+            <div class="project-card__links">
+              <a class="button" href="/jsstp-lib/">ドキュメント</a>
+              <a class="button" href="https://github.com/ukatech/jsstp-lib">GitHub リポジトリ</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="project-card project-card--compact">
+          <div class="project-card__body">
+            <h3 class="project-card__name">metainfo-standard</h3>
+            <p class="project-card__desc">ゴーストの情報 (プレビュー画像やリンクなど) を記述するための共通規格です。</p>
+            <div class="project-card__links">
+              <a class="button" href="/metainfo-standard/">仕様</a>
+              <a class="button" href="https://github.com/ukatech/metainfo-standard">GitHub リポジトリ</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="project-card project-card--compact">
+          <div class="project-card__body">
+            <h3 class="project-card__name">GhostDist</h3>
+            <p class="project-card__desc">ゴーストのネットワーク更新ファイル生成・NAR 作成・FTP アップロードを自動化する Windows ツールです。</p>
+            <div class="project-card__links">
+              <a class="button" href="https://github.com/ukatech/ghostdist">GitHub リポジトリ</a>
+              <a class="button" href="https://github.com/ukatech/ghostdist/releases/latest">最新リリース</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="project-card project-card--compact">
+          <div class="project-card__body">
+            <h3 class="project-card__name">SSPBundleTool</h3>
+            <p class="project-card__desc">自己解凍形式の SSP に initial_install.nar を同梱し、ゴースト同梱版の SSP を作る Windows ツールです。</p>
+            <div class="project-card__links">
+              <a class="button" href="https://github.com/ukatech/SSPBundleTool">GitHub リポジトリ</a>
+              <a class="button" href="https://github.com/ukatech/SSPBundleTool/releases/latest">最新リリース</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section container" aria-labelledby="others-title">
+      <h2 class="section__title" id="others-title">その他のプロジェクト</h2>
+      <ul class="org-grid">
+        <li>
+          <a class="org-card" href="https://github.com/ukatech">
+            <span class="org-card__name">github.com/ukatech</span>
+            <span class="org-card__desc">チームのリポジトリ全般</span>
+          </a>
+        </li>
+        <li>
+          <a class="org-card" href="https://github.com/YAYA-shiori">
+            <span class="org-card__name">github.com/YAYA-shiori</span>
+            <span class="org-card__desc">YAYA 関連のリポジトリ</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section container" aria-labelledby="members-title">
+      <h2 class="section__title" id="members-title">所属メンバー</h2>
+      <!-- members:start -->
+      <p class="member-list__more">メンバー一覧はデプロイ時に GitHub から生成されます。</p>
+      <!-- members:end -->
+    </section>
+
+    <section class="section container" aria-labelledby="partners-title">
+      <h2 class="section__title" id="partners-title">提携</h2>
+      <ul class="org-grid">
+        <li>
+          <a class="org-card" href="https://ms.shillest.net/">
+            <span class="org-card__title">整備班 -The Maintenance Shop-</span>
+            <span class="org-card__name">ms.shillest.net</span>
+            <span class="org-card__desc">前身となったサイト。配布物や情報は順次こちらへ移行中です。</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">&copy; Ukagaka Tech Team</div>
+  </footer>
+</body>
+</html>

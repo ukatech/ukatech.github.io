@@ -1,0 +1,101 @@
+/*
+ * Ukagaka Tech Team design tokens
+ * 色・文字・余白・形の定義。コンポーネント(style.css)はここの変数だけを参照する。
+ * 方針と使い分けは DESIGN.md を参照。
+ */
+
+:root {
+  color-scheme: light dark;
+
+  /* ---- Color: base ---- */
+  --color-bg: #fafaf8;
+  --color-surface: #ffffff;
+  --color-ink: #1c1d21;
+  --color-ink-muted: #5e616b;
+  --color-line: #e3e3df;
+  --color-focus: #2f6fd6;
+
+  /* ---- Color: project ----
+   * キャラクター(ゴースト「SHIORIES」)の配色から取った主色と副色。
+   * -main: 帯・見出しの印・主ボタン / -sub: 帯の細線 / -on: 主色の上に載る文字色
+   */
+  --color-yaya-main: #9b3f3a;    /* くすんだ赤 */
+  --color-yaya-sub: #1c1d21;     /* 黒 */
+  --color-yaya-on: #ffffff;
+
+  --color-satori-main: #2f6b3f;  /* 緑 */
+  --color-satori-sub: #b48e3e;   /* 黄土 */
+  --color-satori-on: #ffffff;
+
+  --color-kawari-main: #1c1d21;  /* 黒 */
+  --color-kawari-sub: #c4262e;   /* 赤 */
+  --color-kawari-on: #ffffff;
+
+  /* ---- Typography ---- */
+  --font-sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI",
+    "Yu Gothic", "Meiryo", system-ui, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", "Consolas", "Menlo", monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: clamp(1.75rem, 4vw + 0.75rem, 2.5rem);
+
+  --leading-tight: 1.35;
+  --leading-body: 1.8;
+
+  /* ---- Space (4px grid) ---- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+
+  /* ---- Shape ---- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-pill: 999px;
+  --border: 1px solid var(--color-line);
+  --stripe-main: 6px;
+  --stripe-sub: 2px;
+
+  /* ---- Layout ---- */
+  --content-width: 60rem;
+  --gutter: var(--space-4);
+
+  --duration: 150ms;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #151619;
+    --color-surface: #1d1f23;
+    --color-ink: #e8e8e4;
+    --color-ink-muted: #a3a6ae;
+    --color-line: #2f3238;
+    --color-focus: #7aa7f0;
+
+    --color-yaya-main: #d0736b;
+    --color-yaya-sub: #e8e8e4;     /* 黒は暗背景に沈むので白側に振る */
+    --color-yaya-on: #151619;
+
+    --color-satori-main: #6fb07f;
+    --color-satori-sub: #d2ae5e;
+    --color-satori-on: #151619;
+
+    --color-kawari-main: #e8e8e4;  /* 黒→白に反転 */
+    --color-kawari-sub: #ef5a60;
+    --color-kawari-on: #151619;
+  }
+}
+
+@media (min-width: 40rem) {
+  :root {
+    --gutter: var(--space-6);
+  }
+}

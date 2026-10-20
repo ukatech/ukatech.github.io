@@ -1,0 +1,44 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # 所属メンバー一覧の更新のため毎週月曜 09:00 (JST) に再デプロイ
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: cp -r site _site
+      - run: python3 scripts/build_members.py _site/index.html
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORG_MEMBERS_TOKEN: ${{ secrets.ORG_MEMBERS_TOKEN }}
+          ORG_MEMBERS_TOKEN_UKATECH: ${{ secrets.ORG_MEMBERS_TOKEN_UKATECH }}
+          ORG_MEMBERS_TOKEN_YAYA_SHIORI: ${{ secrets.ORG_MEMBERS_TOKEN_YAYA_SHIORI }}
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
