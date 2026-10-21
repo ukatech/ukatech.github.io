@@ -2,6 +2,8 @@
 
 ukatech.shillest.net で使う見た目の決まりごと。値の実体は `site/assets/tokens.css`、部品は `site/assets/style.css` にある。
 
+yaya-shiori.github.io (YAYA-shiori/YAYA-shiori.github.io) も、公開中の `https://ukatech.shillest.net/assets/` の CSS とロゴを直接読み込んでいる。クラス名を変えたり消したりするときは、あちらのページも合わせて直すこと。
+
 ## 方針
 
 - シンプルに。装飾より情報の読みやすさを優先する。
