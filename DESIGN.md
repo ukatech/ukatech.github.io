@@ -63,6 +63,7 @@ yaya-shiori.github.io (YAYA-shiori/YAYA-shiori.github.io) も、公開中の `ht
 | 小カード | `.project-card--compact` + `.project-grid--2` | SHIORI 以外のプロジェクト用。色帯とプロジェクト色を使わない無彩色のカードを 2 列で並べる |
 | ボタン | `.button`, `.button--primary` | 主ボタンは主色で塗る。通常ボタンは枠線のみで、ホバー時に枠が主色になる |
 | ボタン注記 | `.button__note` | ボタン内に小さく添える補足。チーム外のサイト(里々wiki など)であることを示すのに使う |
+| トピック案内 | `.topic-guide`, `.topic` | カード群の下に置く補足の枠。サービスごとの条件を 2 列で並べ、GitHub のトピック名は `.topic` のピル(等幅・リンク)で示す |
 | org カード | `.org-card` | リンク全体がカード。org 名(等幅)と一言説明。`.org-card__title` を先頭に置くと、名前(太字)+ URL(等幅・小)+ 説明の形になる(提携欄) |
 | メンバー一覧 | `.member-list`, `.member`, `.member-list__more` | 丸いアバター(24px)+ ID のピルを折り返して並べる。中身はデプロイ時に `scripts/build_members.py` が生成する |
 | バナー | `.banner-list`, `.banner-item`, `.snippet` | バナー画像と、貼り付け用 HTML (クリックで全選択される) を縦に並べる |

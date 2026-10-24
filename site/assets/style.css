@@ -227,6 +227,92 @@ a {
   padding-top: var(--space-3);
 }
 
+/* ---- Topic guide ----
+ * カード群の下に置く補足説明。GitHub のトピック名は .topic のピルで示す。
+ */
+
+.topic-guide {
+  margin-top: var(--space-5);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-surface);
+  border: var(--border);
+  border-radius: var(--radius-md);
+}
+
+.topic-guide__title {
+  font-size: var(--text-base);
+  font-weight: 700;
+}
+
+.topic-guide__lead {
+  margin-top: var(--space-2);
+  color: var(--color-ink-muted);
+  font-size: var(--text-sm);
+}
+
+.topic-guide__grid {
+  display: grid;
+  gap: var(--space-4) var(--space-6);
+  grid-template-columns: 1fr;
+  margin-top: var(--space-4);
+}
+
+@media (min-width: 40rem) {
+  .topic-guide__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.topic-guide__item {
+  min-width: 0;
+}
+
+.topic-guide__name {
+  font-size: var(--text-sm);
+  font-weight: 700;
+}
+
+.topic-guide__list {
+  display: grid;
+  gap: var(--space-2);
+  margin: var(--space-2) 0 0;
+  padding-left: 1.25em;
+  font-size: var(--text-sm);
+}
+
+.topic-guide__topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.topic-guide__note {
+  margin-top: var(--space-3);
+  color: var(--color-ink-muted);
+  font-size: var(--text-xs);
+}
+
+.topic-guide code,
+.topic {
+  font-family: var(--font-mono);
+}
+
+.topic {
+  display: inline-block;
+  padding: 0 var(--space-2);
+  border: var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--color-bg);
+  font-size: var(--text-xs);
+  text-decoration: none;
+  transition: border-color var(--duration);
+}
+
+.topic:hover {
+  border-color: var(--color-ink-muted);
+}
+
 /* ---- Button ---- */
 
 .button {
