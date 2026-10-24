@@ -99,6 +99,23 @@
           </div>
         </li>
       </ul>
+
+      <div class="topic-guide">
+        <h3 class="topic-guide__title">MCP サーバーから引くには</h3>
+        <p class="topic-guide__lead">YAYA・里々・華和梨のドキュメントと、UKADOC 仕様書・SSP ヘルプの 5 つは、伺かの技術ドキュメントを検索できる MCP サーバー <a href="https://github.com/finelagusaz/ukagaka-doc-mcp">ukagaka-doc-mcp</a> からも引けます。AI エージェントに組み込むと、キーワード検索と本文の取得ができます。</p>
+        <ul class="topic-guide__list">
+          <li>手軽に使うなら、公開されているサーバー <code>https://ssp.shillest.net/ukadoc/mcp</code> を、MCP クライアントにリモートサーバー (Streamable HTTP) として登録する</li>
+          <li>手元で動かすなら、Node.js 22 以上で <code>npx ukagaka-doc-mcp</code> を実行する (インストール不要)。MCP クライアントには、コマンド <code>npx</code>・引数 <code>ukagaka-doc-mcp</code> のサーバーとして登録する</li>
+          <li>どちらでも、次の 3 つのツールが使える
+            <span class="topic-guide__topics">
+              <code class="topic">list_categories</code>
+              <code class="topic">search_docs</code>
+              <code class="topic">get_doc</code>
+            </span>
+          </li>
+        </ul>
+        <p class="topic-guide__note">ドキュメントはスナップショットを検索する仕組みで、週に 1 回更新されるため、このサイトの最新の内容とは差が出ることがあります。<code>npx</code> で動かす場合はスナップショットを同梱していて、実行中に外部のネットワークへはアクセスしません。ほかに蒼空 Wiki・湊 docs・Pasta docs も引けます。MCP を使わない場合は <a href="/llms.txt">llms.txt</a> から各ドキュメントの入口をたどれます。</p>
+      </div>
     </section>
 
     <section class="section container" aria-labelledby="libraries-title">
