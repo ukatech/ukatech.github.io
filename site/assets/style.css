@@ -80,6 +80,67 @@ a {
   flex: none;
 }
 
+/* ヘッダーのロゴはインライン SVG にして、手動のテーマ切替にも色が追従するようにしている(形は favicon.svg と同じ) */
+.brand__mark-outline {
+  fill: var(--color-surface);
+  stroke: var(--color-ink);
+}
+
+.brand__mark-yaya {
+  fill: var(--color-yaya-main);
+}
+
+.brand__mark-satori {
+  fill: var(--color-satori-main);
+}
+
+.brand__mark-kawari {
+  fill: var(--color-kawari-main);
+}
+
+/* ---- Theme switch ----
+ * 自動 / ライト / ダークの 3 択。選択中は aria-pressed="true"。動作は assets/theme.js。
+ */
+
+.theme-switch {
+  display: inline-flex;
+  margin-left: auto;
+  border: var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.theme-switch[hidden] {
+  display: none;
+}
+
+.theme-switch__option {
+  min-height: 2rem;
+  padding: 0 var(--space-3);
+  border: 0;
+  border-left: var(--border);
+  background: transparent;
+  color: var(--color-ink-muted);
+  font: inherit;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--duration), color var(--duration);
+}
+
+.theme-switch__option:first-child {
+  border-left: 0;
+}
+
+.theme-switch__option:hover {
+  color: var(--color-ink);
+}
+
+.theme-switch__option[aria-pressed="true"] {
+  background: var(--color-ink);
+  color: var(--color-bg);
+}
+
 /* ---- Hero ---- */
 
 .hero {
@@ -362,6 +423,15 @@ a {
 
 .button--primary:hover {
   opacity: 0.88;
+}
+
+/* 一番に押してほしいボタンの太枠。色は .project--* の主色、無彩色のカードでは文字色(黒) */
+.button--emphasis {
+  border: var(--emphasis-width) solid var(--accent-main, var(--color-ink));
+}
+
+.button--emphasis:hover {
+  background: color-mix(in srgb, var(--accent-main, var(--color-ink)) 10%, transparent);
 }
 
 /* ---- Org list ---- */

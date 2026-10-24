@@ -8,14 +8,25 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/tokens.css">
   <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/theme.js"></script>
 </head>
 <body>
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="brand" href="./">
-        <img class="brand__mark" src="assets/favicon.svg" alt="">
+        <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+          <path class="brand__mark-outline" stroke-width="2.5" stroke-linejoin="round" d="M6 4h20a4 4 0 0 1 4 4v11a4 4 0 0 1-4 4H14l-6 5v-5H6a4 4 0 0 1-4-4V8a4 4 0 0 1 4-4z"/>
+          <circle class="brand__mark-yaya" cx="10" cy="13.5" r="2.25"/>
+          <circle class="brand__mark-satori" cx="16" cy="13.5" r="2.25"/>
+          <circle class="brand__mark-kawari" cx="22" cy="13.5" r="2.25"/>
+        </svg>
         <span>Ukagaka Tech Team</span>
       </a>
+      <div class="theme-switch" hidden role="group" aria-label="表示テーマ">
+        <button class="theme-switch__option" type="button" data-theme-choice="auto" aria-pressed="true">自動</button>
+        <button class="theme-switch__option" type="button" data-theme-choice="light" aria-pressed="false">ライト</button>
+        <button class="theme-switch__option" type="button" data-theme-choice="dark" aria-pressed="false">ダーク</button>
+      </div>
     </div>
   </header>
 
@@ -35,8 +46,8 @@
             <p class="project-card__tagline">Yet Another AYA</p>
             <p class="project-card__desc">C言語に近い構文で書ける、汎用性の高い SHIORI です。豊富な組み込み関数を備え、SAORI としても動作します。テンプレートゴースト「紺野ややめ」から始められます。</p>
             <div class="project-card__links">
-              <a class="button" href="https://yaya-shiori.github.io/yaya-docs/">ドキュメント</a>
               <a class="button button--primary" href="https://github.com/YAYA-shiori/yaya-shiori/releases/latest">最新リリース</a>
+              <a class="button button--emphasis" href="https://yaya-shiori.github.io/yaya-docs/">ドキュメント</a>
               <a class="button" href="https://github.com/YAYA-shiori/konnoyayame">テンプレート: 紺野ややめ</a>
             </div>
           </div>
@@ -49,8 +60,8 @@
             <p class="project-card__tagline">Yet Another SATORI</p>
             <p class="project-card__desc">台本を書くような感覚でトークを記述できる SHIORI です。シンプルな記法で、プログラミングに不慣れでもゴーストを作り始めやすくなっています。</p>
             <div class="project-card__links">
-              <a class="button" href="/satori-docs/">ドキュメント</a>
               <a class="button button--primary" href="https://github.com/ukatech/satoriya-shiori/releases/latest">最新リリース</a>
+              <a class="button button--emphasis" href="/satori-docs/">ドキュメント</a>
               <a class="button" href="https://github.com/ukatech/POST_and_KOMAINU_V2">テンプレート: ポストと狛犬</a>
               <a class="button" href="https://soliton.sub.jp/satori/">里々wiki<span class="button__note">(プロジェクト外: ユーザー視点の解説)</span></a>
             </div>
@@ -64,8 +75,8 @@
             <p class="project-card__tagline">プログラマブル準AI</p>
             <p class="project-card__desc">単語の組み合わせとインラインスクリプト (KIS) で会話を組み立てる SHIORI です。SHIORI/2.x と SHIORI/3.0 に対応しています。</p>
             <div class="project-card__links">
-              <a class="button" href="/kawari-docs/">ドキュメント</a>
               <a class="button button--primary" href="https://github.com/ukatech/kawari/releases/latest">最新リリース</a>
+              <a class="button button--emphasis" href="/kawari-docs/">ドキュメント</a>
             </div>
           </div>
         </li>
@@ -81,7 +92,7 @@
             <h3 class="project-card__name">UKADOC 仕様書</h3>
             <p class="project-card__desc">SSP 公式仕様書の Markdown 版です。さくらスクリプト、SHIORI イベント / リソース、設定ファイル、各種規格を収めています。</p>
             <div class="project-card__links">
-              <a class="button" href="/ukadoc-spec/">仕様書</a>
+              <a class="button button--emphasis" href="/ukadoc-spec/">仕様書</a>
               <a class="button" href="https://github.com/ukatech/ukadoc-spec">GitHub リポジトリ</a>
             </div>
           </div>
@@ -93,7 +104,7 @@
             <h3 class="project-card__name">SSP ヘルプ</h3>
             <p class="project-card__desc">伺かのベースウェア「SSP」の使い方ヘルプです。</p>
             <div class="project-card__links">
-              <a class="button" href="/ukadoc-ssp/">ヘルプ</a>
+              <a class="button button--emphasis" href="/ukadoc-ssp/">ヘルプ</a>
               <a class="button" href="https://github.com/ukatech/ukadoc-ssp">GitHub リポジトリ</a>
             </div>
           </div>
@@ -126,7 +137,7 @@
             <h3 class="project-card__name">CSAORI</h3>
             <p class="project-card__desc">SAORI・プラグインを C++ で作るための基本ライブラリです。</p>
             <div class="project-card__links">
-              <a class="button" href="https://github.com/ukatech/csaori">GitHub リポジトリ</a>
+              <a class="button button--emphasis" href="https://github.com/ukatech/csaori">GitHub リポジトリ</a>
             </div>
           </div>
         </li>
@@ -136,8 +147,8 @@
             <h3 class="project-card__name">ssp-i18n</h3>
             <p class="project-card__desc">SSP の多言語リソースです。英語・中国語 (簡体/繁体)・韓国語の言語パックを管理しています。</p>
             <div class="project-card__links">
+              <a class="button button--emphasis" href="https://github.com/ukatech/ssp-i18n/releases/latest">最新リリース</a>
               <a class="button" href="https://github.com/ukatech/ssp-i18n">GitHub リポジトリ</a>
-              <a class="button" href="https://github.com/ukatech/ssp-i18n/releases/latest">最新リリース</a>
             </div>
           </div>
         </li>
@@ -147,7 +158,7 @@
             <h3 class="project-card__name">jsstp-lib</h3>
             <p class="project-card__desc">Web ページや Node.js から SSTP でゴーストと通信するための JavaScript ライブラリです。npm でも配布しています。</p>
             <div class="project-card__links">
-              <a class="button" href="/jsstp-lib/">ドキュメント</a>
+              <a class="button button--emphasis" href="/jsstp-lib/">ドキュメント</a>
               <a class="button" href="https://github.com/ukatech/jsstp-lib">GitHub リポジトリ</a>
             </div>
           </div>
@@ -158,7 +169,7 @@
             <h3 class="project-card__name">metainfo-standard</h3>
             <p class="project-card__desc">ゴーストの情報 (プレビュー画像やリンクなど) を記述するための共通規格です。</p>
             <div class="project-card__links">
-              <a class="button" href="/metainfo-standard/">仕様</a>
+              <a class="button button--emphasis" href="/metainfo-standard/">仕様</a>
               <a class="button" href="https://github.com/ukatech/metainfo-standard">GitHub リポジトリ</a>
             </div>
           </div>
@@ -169,8 +180,8 @@
             <h3 class="project-card__name">GhostDist</h3>
             <p class="project-card__desc">ゴーストのネットワーク更新ファイル生成・NAR 作成・FTP アップロードを自動化する Windows ツールです。</p>
             <div class="project-card__links">
+              <a class="button button--emphasis" href="https://github.com/ukatech/ghostdist/releases/latest">最新リリース</a>
               <a class="button" href="https://github.com/ukatech/ghostdist">GitHub リポジトリ</a>
-              <a class="button" href="https://github.com/ukatech/ghostdist/releases/latest">最新リリース</a>
             </div>
           </div>
         </li>
@@ -180,8 +191,8 @@
             <h3 class="project-card__name">SSPBundleTool</h3>
             <p class="project-card__desc">自己解凍形式の SSP に initial_install.nar を同梱し、ゴースト同梱版の SSP を作る Windows ツールです。</p>
             <div class="project-card__links">
+              <a class="button button--emphasis" href="https://github.com/ukatech/SSPBundleTool/releases/latest">最新リリース</a>
               <a class="button" href="https://github.com/ukatech/SSPBundleTool">GitHub リポジトリ</a>
-              <a class="button" href="https://github.com/ukatech/SSPBundleTool/releases/latest">最新リリース</a>
             </div>
           </div>
         </li>
@@ -196,7 +207,7 @@
             <h3 class="project-card__name">偽SoSiReMi</h3>
             <p class="project-card__desc">GitHub で公開されているゴーストなどの NAR ファイルを一覧表示するサイトです。</p>
             <div class="project-card__links">
-              <a class="button" href="https://nikolat.github.io/sosiremi/">サイト</a>
+              <a class="button button--emphasis" href="https://nikolat.github.io/sosiremi/">サイト</a>
               <a class="button" href="https://github.com/nikolat/sosiremi">GitHub リポジトリ</a>
             </div>
           </div>
@@ -207,7 +218,7 @@
             <h3 class="project-card__name">偽SiReFaSo</h3>
             <p class="project-card__desc">GitHub で公開されている伺か関連アプリの更新情報を一覧表示するサイトです。</p>
             <div class="project-card__links">
-              <a class="button" href="https://nikolat.github.io/sirefaso/">サイト</a>
+              <a class="button button--emphasis" href="https://nikolat.github.io/sirefaso/">サイト</a>
               <a class="button" href="https://github.com/nikolat/sirefaso">GitHub リポジトリ</a>
             </div>
           </div>
