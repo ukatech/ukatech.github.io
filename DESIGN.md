@@ -57,7 +57,7 @@ yaya-shiori.github.io (YAYA-shiori/YAYA-shiori.github.io) も、公開中の `ht
 | 部品 | クラス | 説明 |
 |---|---|---|
 | ヘッダー | `.site-header`, `.brand` | ロゴマークとチーム名 |
-| ヒーロー | `.hero` | キッカー(`ukatech`)、見出し、リード文 |
+| ヒーロー | `.hero` | 見出し、リード文。縦の余白は詰めてある。`.hero__kicker`(見出し上の小さな文字)は、このページでは使わず、yaya-shiori.github.io が使う |
 | セクション | `.section`, `.section__title` | 下罫線付きの小見出しで区切る |
 | プロジェクトカード | `.project-card` + `.project--*` | 上端に主色の太帯(6px)と副色の細線(2px)。名前、タグライン(主色)、説明、リンク |
 | 小カード | `.project-card--compact` + `.project-grid--2` | SHIORI 以外のプロジェクト用。色帯とプロジェクト色を使わない無彩色のカードを 2 列で並べる |
