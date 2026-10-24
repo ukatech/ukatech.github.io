@@ -1,0 +1,13 @@
+# Ukagaka Tech Team
+
+> 伺か（Ukagaka）関連の SHIORI・ライブラリ・ドキュメントを開発・公開しているチーム。
+
+## ドキュメント
+
+各ドキュメントの llms.txt は、その探し方の案内。ページの Markdown 原稿は、そこから辿れる。
+
+- [YAYA マニュアル](https://yaya-shiori.github.io/yaya-docs/llms.txt): SHIORI「YAYA」の文法、組み込み関数、チュートリアル
+- [里々マニュアル](https://ukatech.shillest.net/satori-docs/llms.txt): SHIORI「里々」と同梱 SAORI「ssu」の仕様書
+- [華和梨マニュアル](https://ukatech.shillest.net/kawari-docs/llms.txt): SHIORI「華和梨」の辞書の文法、KIS コマンド、移行ガイド
+- [UKADOC 仕様書](https://ukatech.shillest.net/ukadoc-spec/llms.txt): SSP の公式仕様書。さくらスクリプト、SHIORI イベント、設定ファイル、規格
+- [SSP ヘルプ](https://ukatech.shillest.net/ukadoc-ssp/llms.txt): ベースウェア「SSP」の使い方ヘルプ
