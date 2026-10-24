@@ -31,6 +31,15 @@
   --color-kawari-sub: #c4262e;   /* 赤 */
   --color-kawari-on: #ffffff;
 
+  /* ドキュメント欄の 2 枚。SHIORI とは別系統の色(キャラクター由来ではない) */
+  --color-ukadoc-spec-main: #1f4e8c;  /* 紺 */
+  --color-ukadoc-spec-sub: #bfa968;   /* 淡い金 */
+  --color-ukadoc-spec-on: #ffffff;
+
+  --color-ukadoc-ssp-main: #6a4c93;   /* 紫 */
+  --color-ukadoc-ssp-sub: #8a8d96;    /* 灰 */
+  --color-ukadoc-ssp-on: #ffffff;
+
   /* ---- Typography ---- */
   --font-sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI",
     "Yu Gothic", "Meiryo", system-ui, sans-serif;
@@ -91,6 +100,14 @@
     --color-kawari-main: #e8e8e4;  /* 黒→白に反転 */
     --color-kawari-sub: #ef5a60;
     --color-kawari-on: #151619;
+
+    --color-ukadoc-spec-main: #6f9bd6;
+    --color-ukadoc-spec-sub: #d6c07f;
+    --color-ukadoc-spec-on: #151619;
+
+    --color-ukadoc-ssp-main: #a98fd0;
+    --color-ukadoc-ssp-sub: #8a8d96;
+    --color-ukadoc-ssp-on: #151619;
   }
 }
 

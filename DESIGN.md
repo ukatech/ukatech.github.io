@@ -34,6 +34,13 @@ yaya-shiori.github.io (YAYA-shiori/YAYA-shiori.github.io) も、公開中の `ht
 | 里々 | 緑 `#2f6b3f` | 黄土 `#b48e3e` | 里々 |
 | 華和梨 | 黒 `#1c1d21` | 赤 `#c4262e` | 華和梨 |
 
+ドキュメント欄の 2 枚は、キャラクターではなく SHIORI と被らない色を割り当てている。
+
+| ドキュメント | main | sub |
+|---|---|---|
+| UKADOC 仕様書 | 紺 `#1f4e8c` | 淡い金 `#bfa968` |
+| SSP ヘルプ | 紫 `#6a4c93` | 灰 `#8a8d96` |
+
 - ダークモードでは黒が背景に沈むため、黒の役割を白寄り(`#e8e8e4`)に反転させる。他の色も明度を上げる。
 - `-on` トークンは主色の上に載せる文字色(主ボタンの文字)。
 - 部品側では `.project--yaya` などのクラスが `--accent-main` / `--accent-sub` / `--accent-on` を設定し、カードの中はこの 3 つだけを参照する。プロジェクトを増やすときはトークンを 3 つ足し、同じ形のクラスを 1 つ足す。
@@ -60,7 +67,7 @@ yaya-shiori.github.io (YAYA-shiori/YAYA-shiori.github.io) も、公開中の `ht
 | ヒーロー | `.hero` | 見出し、リード文。縦の余白は詰めてある。`.hero__kicker`(見出し上の小さな文字)は、このページでは使わず、yaya-shiori.github.io が使う |
 | セクション | `.section`, `.section__title` | 下罫線付きの小見出しで区切る |
 | プロジェクトカード | `.project-card` + `.project--*` | 上端に主色の太帯(6px)と副色の細線(2px)。名前、タグライン(主色)、説明、リンク |
-| 小カード | `.project-card--compact` + `.project-grid--2` | SHIORI 以外のプロジェクト用。色帯とプロジェクト色を使わない無彩色のカードを 2 列で並べる |
+| 小カード | `.project-card--compact` + `.project-grid--2` | SHIORI 以外のプロジェクト用。2 列で並べる。基本は色帯なしの無彩色で、ドキュメント欄の 2 枚だけ `.project--ukadoc-spec` / `.project--ukadoc-ssp` と `.project-card__stripe` で色帯を付ける |
 | ボタン | `.button`, `.button--primary` | 主ボタンは主色で塗る。通常ボタンは枠線のみで、ホバー時に枠が主色になる |
 | ボタン注記 | `.button__note` | ボタン内に小さく添える補足。チーム外のサイト(里々wiki など)であることを示すのに使う |
 | トピック案内 | `.topic-guide`, `.topic` | カード群の下に置く補足の枠。サービスごとの条件を 2 列で並べ、GitHub のトピック名は `.topic` のピル(等幅・リンク)で示す |
