@@ -3,7 +3,7 @@
 Ukagaka Tech Team のサイト <https://ukatech.shillest.net/> のソース。
 
 - `site/` 以下が公開される。`main` への push と毎週月曜 09:00 (JST) に `.github/workflows/pages.yml` が GitHub Pages にデプロイする。
-- `/kawari-docs/`、`/satori-docs/`、`/ukadoc-spec/`、`/ukadoc-ssp/`、`/jsstp-lib/`、`/metainfo-standard/` は各リポジトリのプロジェクトページで、このリポジトリには含まれない。同じパスのファイルを `site/` に置かないこと。
+- `/kawari/`、`/satoriya-shiori/` は、最新リリースのバッジ (`badge.svg`) だけを配る各リポジトリのプロジェクトページ(作り方は [DESIGN.md](DESIGN.md) の「リリースバッジ」)。`/kawari-docs/`、`/satori-docs/`、`/ukadoc-spec/`、`/ukadoc-ssp/`、`/jsstp-lib/`、`/metainfo-standard/` は各リポジトリのプロジェクトページで、このリポジトリには含まれない。同じパスのファイルを `site/` に置かないこと。
 - 色・文字・部品の決まりは [DESIGN.md](DESIGN.md) を参照。
 
 ## 所属メンバー一覧

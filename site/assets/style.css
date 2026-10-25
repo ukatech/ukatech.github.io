@@ -296,8 +296,30 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
-  margin-top: auto;
   padding-top: var(--space-3);
+}
+
+/* 最新リリースのボタンとバッジ(バージョン・公開日)を 1 段にまとめ、残りのボタンは次の段に回す */
+.release-row {
+  display: flex;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.release-row .button {
+  white-space: nowrap;
+}
+
+.release-badge {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.release-badge img {
+  height: 2.25rem;
+  width: auto;
 }
 
 /* ---- Topic guide ----
