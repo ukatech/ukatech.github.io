@@ -280,6 +280,26 @@ a {
   font-size: var(--text-lg);
 }
 
+/* チーム外が提供しているものは、枠を点線にして区別する */
+.project-card--external {
+  border-style: dashed;
+}
+
+/* 名前と、チーム外提供の印を同じ行に置く。幅が足りなければ印が下に回る */
+.project-card__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-1) var(--space-3);
+}
+
+.project-card__origin {
+  margin-left: auto;
+  color: var(--color-ink-muted);
+  font-size: var(--text-xs);
+}
+
 .project-card__tagline {
   font-family: var(--font-mono);
   font-size: var(--text-sm);
