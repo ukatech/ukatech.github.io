@@ -20,7 +20,7 @@ from xml.sax.saxutils import escape
 
 HEIGHT = 36  # .button の min-height (2.25rem) に合わせる
 BAR = 4  # 左端の副色の帯
-PAD = 14
+PAD = 12
 VERSION_SIZE = 16
 DATE_SIZE = 10
 FONT = "'Segoe UI','Helvetica Neue',Arial,'Yu Gothic UI',sans-serif"
@@ -48,7 +48,7 @@ def format_date(published_at):
 
 def build_svg(version, date, main, sub):
     # フォントを測れないので文字数から幅を見積もり、中央寄せで余裕を持たせる
-    text_w = max(len(version) * VERSION_SIZE * 0.64, len(date) * DATE_SIZE * 0.62)
+    text_w = max(len(version) * VERSION_SIZE * 0.58, len(date) * DATE_SIZE * 0.62)
     width = int(round(max(text_w + PAD * 2 + BAR, 76)))
     cx = BAR + (width - BAR) / 2
     label = f"最新リリース {version} ({date})"
