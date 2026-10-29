@@ -66,9 +66,6 @@
   --space-8: 4.5rem;
 
   /* ---- Shape ---- */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-pill: 999px;
   --border: 1px solid var(--color-line);
   --stripe-main: 6px;
   --stripe-sub: 2px;

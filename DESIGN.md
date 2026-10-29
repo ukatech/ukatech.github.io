@@ -55,7 +55,7 @@ yaya-shiori.github.io (YAYA-shiori/YAYA-shiori.github.io) も、公開中の `ht
 ## 余白と形
 
 - 余白は 4px グリッドの `--space-1`〜`--space-8`。
-- 角丸はボタン `--radius-sm`(4px)、カード `--radius-md`(8px)。
+- 角丸は使わない(ボタン・カード・ピル・アバターすべて直角)。
 - 影は使わず、1px の罫線(`--border`)で面を区切る。
 - 本文幅は `--content-width`(60rem)。左右の余白 `--gutter` はスマートフォンで 16px、40rem 以上で 32px。
 
@@ -68,12 +68,13 @@ yaya-shiori.github.io (YAYA-shiori/YAYA-shiori.github.io) も、公開中の `ht
 | セクション | `.section`, `.section__title` | 下罫線付きの小見出しで区切る |
 | プロジェクトカード | `.project-card` + `.project--*` | 上端に主色の太帯(6px)と副色の細線(2px)。名前、タグライン(主色)、説明、リンク |
 | 小カード | `.project-card--compact` + `.project-grid--2` | SHIORI 以外のプロジェクト用。2 列で並べる。基本は色帯なしの無彩色で、ドキュメント欄の 2 枚だけ `.project--ukadoc-spec` / `.project--ukadoc-ssp` と `.project-card__stripe` で色帯を付ける |
+| キャラ背景 | `.project-card--backdrop` + `.backdrop--*` | キャラクターが主役のカード(1 枚を占有するもの)だけ、等倍(FLELE は 136x176)の透明 PNG を右下に濃さ 8% で敷く。画像は `site/assets/ghost/` に置き、`.backdrop--flele` のように `--backdrop-image` を定義する。カードの最小の高さを画像の高さに取り、頭が切れないようにする。FLELE の画像は `shell/master/surface0000.png` に `.pna`(アルファ)を合成したもの(READMEで再配布・改変配布可と明記) |
 | ボタン | `.button`, `.button--primary`, `.button--emphasis` | 主ボタンは主色で塗る。通常ボタンは枠線のみで、ホバー時に枠が主色になる。`.button--emphasis` は太枠(`--emphasis-width`)で、色は `.project--*` の主色、無彩色のカードでは黒(ダークでは白寄り)。カードの先頭(左上)に置く。SHIORI は最新リリース(塗り)→ドキュメント(太枠)、色帯付きのドキュメント欄は仕様書/ヘルプ、それ以外は開発者向けでない入口(最新リリース・ドキュメント・サイトなど。GitHub リポジトリは通常ボタン)を太枠にする |
 | リリース行 | `.release-row`, `.release-badge` | 最新リリースのボタンと、バージョン・公開日のバッジ(画像)を 1 段に並べる。幅を 100% にして、続くボタン(ドキュメントなど)を次の段へ回す。カード内のボタン群(`.project-card__links`)は上詰めなので、カードごとに説明文の行数が違っても「最新リリース」の位置が揃う |
 | ボタン注記 | `.button__note` | ボタン内に小さく添える補足。チーム外のサイト(里々wiki など)であることを示すのに使う |
-| トピック案内 | `.topic-guide`, `.topic` | カード群の下に置く補足の枠。サービスごとの条件を 2 列で並べ、GitHub のトピック名は `.topic` のピル(等幅・リンク)で示す |
+| トピック案内 | `.topic-guide`, `.topic` | カード群の下に置く補足の枠。サービスごとの条件を 2 列で並べ、GitHub のトピック名は `.topic` の枠付きチップ(等幅・リンク)で示す |
 | org カード | `.org-card` | リンク全体がカード。org 名(等幅)と一言説明。`.org-card__title` を先頭に置くと、名前(太字)+ URL(等幅・小)+ 説明の形になる(提携欄) |
-| メンバー一覧 | `.member-list`, `.member`, `.member-list__more` | 丸いアバター(24px)+ ID のピルを折り返して並べる。中身はデプロイ時に `scripts/build_members.py` が生成する |
+| メンバー一覧 | `.member-list`, `.member`, `.member-list__more` | 四角いアバター(24px)+ ID の枠を折り返して並べる。中身はデプロイ時に `scripts/build_members.py` が生成する |
 | バナー | `.banner-list`, `.banner-item`, `.snippet` | バナー画像と、貼り付け用 HTML (クリックで全選択される) を縦に並べる |
 | フッター | `.site-footer` | |
 
