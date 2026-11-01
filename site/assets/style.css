@@ -263,8 +263,9 @@ a {
   padding: var(--space-5);
 }
 
-/* キャラクターを背景にうっすら置くカード。画像は等倍(136x176)で右下に置き、文字の下に回す。
- * 画像の高さ分だけカードの最小の高さを取り、頭が切れないようにする。 */
+/* キャラクターを背景にうっすら置くカード。画像は等倍(既定は 136x176)で右下に置き、文字の下に回す。
+ * 画像の高さ分だけカードの最小の高さを取り、頭が切れないようにする。
+ * 幅の違う画像は、.backdrop--* で --backdrop-width を決める。 */
 .project-card--backdrop {
   position: relative;
   min-height: 176px;
@@ -275,7 +276,7 @@ a {
   position: absolute;
   right: var(--space-4);
   bottom: 0;
-  width: 136px;
+  width: var(--backdrop-width, 136px);
   height: 176px;
   background: var(--backdrop-image) no-repeat center / contain;
   opacity: 0.08;
@@ -288,6 +289,11 @@ a {
 
 .backdrop--flele {
   --backdrop-image: url("ghost/flele.png");
+}
+
+.backdrop--shiories {
+  --backdrop-image: url("ghost/shiories.png");
+  --backdrop-width: 300px;
 }
 
 .project-card__name {
