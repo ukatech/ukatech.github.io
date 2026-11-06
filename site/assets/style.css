@@ -291,6 +291,11 @@ a {
   --backdrop-image: url("ghost/flele.png");
 }
 
+.backdrop--the-hand {
+  --backdrop-image: url("ghost/the-hand.png");
+  --backdrop-width: 100px;
+}
+
 .backdrop--shiories {
   --backdrop-image: url("ghost/shiories.png");
   --backdrop-width: 300px;
