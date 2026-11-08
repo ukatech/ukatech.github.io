@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="assets/tokens.css">
   <link rel="stylesheet" href="assets/style.css">
   <script src="assets/theme.js"></script>
+  <script src="assets/translate.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -38,7 +39,7 @@
 
     <section class="section container" aria-labelledby="projects-title">
       <h2 class="section__title" id="projects-title">SHIORI</h2>
-      <ul class="project-grid">
+      <ul class="project-grid project-grid--2">
         <li class="project-card project--yaya">
           <div class="project-card__stripe"></div>
           <div class="project-card__body">
@@ -87,6 +88,17 @@
                 <a class="release-badge" href="https://github.com/ukatech/kawari/releases/latest"><img src="/kawari/badge.svg" alt="最新リリースのバージョンと公開日" height="36"></a>
               </div>
               <a class="button button--emphasis" href="/kawari-docs/">ドキュメント</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="project-card">
+          <div class="project-card__body">
+            <h3 class="project-card__name">powershiori</h3>
+            <p class="project-card__desc">純粋な PowerShell で書かれた SHIORI/3.0 の SHIORI です。<a href="https://github.com/steve02081504/ps12exe">ps12exe</a> でネイティブ DLL にコンパイルして使い、辞書は <code>.dic.ps1</code> に PowerShell でそのまま書けます。</p>
+            <div class="project-card__links">
+              <a class="button button--primary" href="https://github.com/ukatech/powershiori/releases/latest">最新リリース</a>
+              <a class="button" href="https://github.com/ukatech/powershiori">GitHub リポジトリ</a>
             </div>
           </div>
         </li>

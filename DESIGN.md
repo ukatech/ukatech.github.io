@@ -9,6 +9,7 @@ yaya-shiori.github.io (YAYA-shiori/YAYA-shiori.github.io) も、公開中の `ht
 - シンプルに。装飾より情報の読みやすさを優先する。
 - 色はプロジェクトの識別にだけ使い、それ以外は無彩色(生成りの背景と墨色の文字)で組む。
 - ライト/ダークの両方に対応する。既定は OS の設定に追従(`prefers-color-scheme`)し、ヘッダーの「自動 / ライト / ダーク」で固定もできる。固定は `<html data-theme="light|dark">` で表し、選択は `assets/theme.js` が localStorage(`ukatech-theme`)に保存する。`data-theme` を付けないページは OS 追従のまま。暗色の値は `tokens.css` の `@media` 内と `[data-theme="dark"]` の 2 か所に同じものを置くので、変えるときは両方を直す。
+- 日本語のみで書くが、ヘッダーのテーマ切替の右隣に翻訳メニューを置く(`assets/translate.js`、見た目は `style.css` の `.translate`)。ブラウザ組み込みの Translator API(Chrome 138 以降のデスクトップ版など)で、日本語から English・繁體中文・简体中文へ機械翻訳する。API が無いブラウザではメニューを出さない。`code`・プロジェクト名(`.project-card__name`)・`translate="no"` の中は訳さない。選んだ言語は localStorage(`ukatech-translate-lang`)に保存する。ukadoc-spec の翻訳ボタンと同じ作りなので、直すときは両方をそろえる。
 - ビルド不要の素の HTML/CSS。外部フォントや JS ライブラリに依存しない。
 
 ## 色
@@ -66,8 +67,8 @@ yaya-shiori.github.io (YAYA-shiori/YAYA-shiori.github.io) も、公開中の `ht
 | ヘッダー | `.site-header`, `.brand` | ロゴマークとチーム名 |
 | ヒーロー | `.hero` | 見出し、リード文。縦の余白は詰めてある。`.hero__kicker`(見出し上の小さな文字)は、このページでは使わず、yaya-shiori.github.io が使う |
 | セクション | `.section`, `.section__title` | 下罫線付きの小見出しで区切る |
-| プロジェクトカード | `.project-card` + `.project--*` | 上端に主色の太帯(6px)と副色の細線(2px)。名前、タグライン(主色)、説明、リンク。チーム外提供の SHIORI(蒼空・Pasta)は `.project--*`・色帯・タグラインを付けず、`.project-card--external` と `.project-card__head`(名前+チーム外提供の印)で無彩色にする。塗りの主ボタンは主色がないので使えず、ドキュメントを先頭の太枠にする |
-| 小カード | `.project-card--compact` + `.project-grid--2` | SHIORI 以外のプロジェクト用。2 列で並べる。基本は色帯なしの無彩色で、ドキュメント欄の 2 枚だけ `.project--ukadoc-spec` / `.project--ukadoc-ssp` と `.project-card__stripe` で色帯を付ける |
+| プロジェクトカード | `.project-card` + `.project--*` | 上端に主色の太帯(6px)と副色の細線(2px)。名前、タグライン(主色)、説明、リンク。チーム外提供の SHIORI(蒼空・Pasta)は `.project--*`・色帯・タグラインを付けず、`.project-card--external` と `.project-card__head`(名前+チーム外提供の印)で無彩色にする。塗りの主ボタンは主色がないので使えず、ドキュメントを先頭の太枠にする。チーム提供でキャラクター色のない powershiori は、`.project-card` だけの色帯なしカード(実線の枠、タグラインなし)で、最新リリース(塗り、黒)→ GitHub リポジトリの順に置く |
+| 小カード | `.project-card--compact` + `.project-grid--2` | SHIORI 以外のプロジェクト用。2 列で並べる(SHIORI 欄のグリッドも `.project-grid--2` の 2 列)。基本は色帯なしの無彩色で、ドキュメント欄の 2 枚だけ `.project--ukadoc-spec` / `.project--ukadoc-ssp` と `.project-card__stripe` で色帯を付ける |
 | キャラ背景 | `.project-card--backdrop` + `.backdrop--*` | キャラクターが主役のカード(1 枚を占有するもの)だけ、等倍(FLELE は 136x176、SHIORIES は 3 人を並べた 300x176、The Hand は手 100x100 を高さ 176 の下に置いた 100x176)の透明 PNG を右下に濃さ 8% で敷く。画像は `site/assets/ghost/` に置き、`.backdrop--flele` のように `--backdrop-image` を定義する。幅が 136px でないときは `--backdrop-width` も定義する。カードの最小の高さを画像の高さに取り、頭が切れないようにする。FLELE の画像は `shell/master/surface0000.png` に `.pna`(アルファ)を合成したもの(READMEで再配布・改変配布可と明記)。SHIORIES の画像は、シェル(ボトル猫氏)の `surface0000.png`(華和梨)、`surface1000.png`(里々)、`surface2000.png`(文)の透過色(緑)を抜き、上半身を 0.6 倍にして並べたもの(このサイトでの使用はゴーストの管理者が決めた)。The Hand の画像は `shell/master/surface000.png`(100x100、左上の緑 (74,255,74) が透過色)の緑を抜き、高さ 176 のキャンバスの下端に置いたもの(READMEに「ゴーストの扱いは基本的になにをしてもオッケー」とある) |
 | ボタン | `.button`, `.button--primary`, `.button--emphasis` | 主ボタンは主色で塗る。通常ボタンは枠線のみで、ホバー時に枠が主色になる。`.button--emphasis` は太枠(`--emphasis-width`)で、色は `.project--*` の主色、無彩色のカードでは黒(ダークでは白寄り)。カードの先頭(左上)に置く。SHIORI は最新リリース(塗り)→ドキュメント(太枠)、色帯付きのドキュメント欄は仕様書/ヘルプ、それ以外は開発者向けでない入口(最新リリース・ドキュメント・サイトなど。GitHub リポジトリは通常ボタン)を太枠にする |
 | リリース行 | `.release-row`, `.release-badge` | 最新リリースのボタンと、バージョン・公開日のバッジ(画像)を 1 段に並べる。幅を 100% にして、続くボタン(ドキュメントなど)を次の段へ回す。カード内のボタン群(`.project-card__links`)は上詰めなので、カードごとに説明文の行数が違っても「最新リリース」の位置が揃う |
